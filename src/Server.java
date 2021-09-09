@@ -1,3 +1,9 @@
+/**Server side of socket programming
+ *
+ * @author Larry Langat
+ * @since 09/04/2021
+ * */
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
@@ -6,7 +12,11 @@ import java.util.Scanner;
 
 public class Server {
 
-  //create constructor that takes in port number
+  /**
+   * Constructor class that takes in port number
+   *
+   * @param port port number that server will use to connect to client
+   */
   public Server(int port)throws IOException {
 
     //create server socket that will wait and listen for clients in given port
@@ -37,8 +47,16 @@ public class Server {
     scanner.close();
     p.close();
 
+    System.out.println("Connection closed");
+
   }
 
+  /**
+   * Main class that calls server method
+   *
+   * @param args unused
+   * @throws IOException in case ip address or port number is unknown
+   * */
   public static void main(String[] args)throws IOException{
     new Server(12000);
   }
